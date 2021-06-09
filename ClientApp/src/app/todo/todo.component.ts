@@ -18,7 +18,8 @@ export class TodoComponent implements OnInit {
   }
 
   displayData() {
-    this.onClick.emit(this.title = this.titleData);
+    this.onClick.emit();
+    this.title = this.titleData;
     console.log(this.titleData)
     // this.todoData.description = this.description;
   }
