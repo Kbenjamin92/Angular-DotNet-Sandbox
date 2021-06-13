@@ -6,17 +6,17 @@
 <main class="main-container">
     <form action="">
         <div class="form-group">
-            <input type="text" [(ngModel)]="title" class="form-control title" name="title" placeholder="Title..." >
+            <input type="text" [(ngModel)]="titleInput" class="form-control title" name="title" placeholder="Title..." >
         </div>
         <div class="form-group">
-            <input type="text" [(ngModel)]="description" class="form-control description" name="description" placeholder="Description..." >
+            <input type="text" [(ngModel)]="descriptionInput" class="form-control description" name="description" placeholder="Description..." >
         </div>
         <button type="submit" (click)="displayData()" class="btn btn-success">Add Todo</button>
     </form>
-    <app-button></app-button>
+    <!-- <app-button [label]="Get Todo's"></app-button> -->
 </main>
 <div>
-    <h3>{{titleData}}</h3>
+    <h3>{{title}}</h3>
     <p>{{description}}</p>
     
 </div>

@@ -9,6 +9,10 @@ export class TodoService {
 
   constructor() { }
 
-  
 
+
+}
+interface ITodo {
+  title: string;
+  description: string;
 }

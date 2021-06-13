@@ -7,10 +7,11 @@ import { TodoService } from '../todo.service'
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  public titleData;
-  @Input() title = '';
-  @Input() description = '';
+  @Input() titleInput: string;
+  @Input() descriptionInput: string;
   @Output() onClick = new EventEmitter;
+  title;
+  description;
 
   constructor(public todoData: TodoService) { }
 
@@ -18,10 +19,11 @@ export class TodoComponent implements OnInit {
   }
 
   displayData() {
-    this.onClick.emit();
-    this.title = this.titleData;
-    console.log(this.titleData)
-    // this.todoData.description = this.description;
+    this.onClick.emit(this.todoData.title = this.titleInput); 
+    this.onClick.emit(this.todoData.description = this.descriptionInput);
+    this.title = this.todoData.title;
+    this.description = this.todoData.description;
+   
   }
 
 }
