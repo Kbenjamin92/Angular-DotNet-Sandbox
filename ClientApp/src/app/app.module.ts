@@ -21,7 +21,7 @@ import { ButtonComponent } from './button/button.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'todo', component: TodoComponent },
+      { path: '', component: TodoComponent },
 
     ])
   ],

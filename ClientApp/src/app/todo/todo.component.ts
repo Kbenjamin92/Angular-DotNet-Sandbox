@@ -13,6 +13,13 @@ export class TodoComponent implements OnInit {
   title;
   description;
 
+/*
+ - create an object to store the title and description
+
+ - declare the object in the todo service. 
+
+*/
+
   constructor(public todoData: TodoService) { }
 
   ngOnInit() {
@@ -23,7 +30,9 @@ export class TodoComponent implements OnInit {
     this.onClick.emit(this.todoData.description = this.descriptionInput);
     this.title = this.todoData.title;
     this.description = this.todoData.description;
-   
+
+    this.titleInput = "";
+    this.descriptionInput = "";
   }
 
 }
