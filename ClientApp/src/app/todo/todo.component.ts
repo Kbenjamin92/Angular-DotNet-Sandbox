@@ -12,13 +12,7 @@ export class TodoComponent implements OnInit {
   @Output() onClick = new EventEmitter;
   title;
   description;
-
-/*
- - create an object to store the title and description
-
- - declare the object in the todo service. 
-
-*/
+  displayCard: boolean;
 
   constructor(public todoData: TodoService) { }
 
@@ -31,6 +25,8 @@ export class TodoComponent implements OnInit {
     this.title = this.todoData.title;
     this.description = this.todoData.description;
 
+    this.todoData.storeTodoData({title: this.title, description: this.description});
+    this.displayCard = true;
     this.titleInput = "";
     this.descriptionInput = "";
   }
