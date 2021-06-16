@@ -11,7 +11,9 @@ export class TodoService {
   constructor() { }
 
   storeTodoData(postData: ITodo) {
-      console.log(this.todoCollection);
+      console.log(postData);
+      const collection: ITodoCollection = [postData];
+      console.log(collection);
   }
    
   
@@ -19,4 +21,8 @@ export class TodoService {
 interface ITodo {
     title: string;
     description: string;
+}
+
+interface ITodoCollection {
+  [index: number]: any;
 }
