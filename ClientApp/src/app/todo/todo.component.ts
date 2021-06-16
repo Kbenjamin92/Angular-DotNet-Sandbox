@@ -33,6 +33,8 @@ export class TodoComponent implements OnInit {
     console.log(this.collection)
   }
 
-  
+  removeTodo() {
+    
+  }
 
 }
