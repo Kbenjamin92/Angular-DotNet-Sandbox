@@ -9,7 +9,10 @@ export class TodoService {
   public todoCollection: any[];
 
   constructor() { }
+/*
+figure out how to spread the new objects into the collection array in service
 
+*/
   storeTodoData(postData: ITodo) {
       console.log(postData);
       const collection: ITodoCollection = [postData];
