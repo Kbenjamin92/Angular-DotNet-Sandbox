@@ -13,6 +13,7 @@ export class TodoComponent implements OnInit {
   title;
   description;
   displayCard: boolean;
+  collection = [];
 
   constructor(public todoData: TodoService) { }
 
@@ -20,15 +21,16 @@ export class TodoComponent implements OnInit {
   }
 
   displayData() {
-    this.onClick.emit(this.todoData.title = this.titleInput); 
+    this.onClick.emit(this.todoData.title = this.titleInput);
     this.onClick.emit(this.todoData.description = this.descriptionInput);
     this.title = this.todoData.title;
     this.description = this.todoData.description;
-
-    this.todoData.storeTodoData({title: this.title, description: this.description});
+    this.collection.push(this.todoData);
+    this.todoData.storeTodoData(this.todoData);
     this.displayCard = true;
     this.titleInput = "";
     this.descriptionInput = "";
+    console.log(this.collection);
   }
 
 }
