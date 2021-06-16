@@ -21,16 +21,18 @@ export class TodoComponent implements OnInit {
   }
 
   displayData() {
-    this.onClick.emit(this.todoData.title = this.titleInput);
-    this.onClick.emit(this.todoData.description = this.descriptionInput);
-    this.title = this.todoData.title;
-    this.description = this.todoData.description;
-    this.collection.push(this.todoData);
+    this.onClick.emit(this.title = this.titleInput);
+    this.onClick.emit(this.description = this.descriptionInput);
+    this.todoData.title = this.title
+    this.todoData.description = this.description
+    this.collection.push({title: this.title, description: this.description});
     this.todoData.storeTodoData(this.todoData);
     this.displayCard = true;
     this.titleInput = "";
     this.descriptionInput = "";
-    console.log(this.collection);
+    console.log(this.collection)
   }
+
+  
 
 }

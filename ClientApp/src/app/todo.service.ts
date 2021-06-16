@@ -15,7 +15,6 @@ figure out how to spread the new objects into the collection array in service
 */
   storeTodoData(postData: ITodo) {
       console.log(postData);
-      // const collection: ITodoCollection = [postData];
   }
    
   
@@ -25,6 +24,3 @@ interface ITodo {
     description: string;
 }
 
-interface ITodoCollection {
-  [index: number]: any;
-}
