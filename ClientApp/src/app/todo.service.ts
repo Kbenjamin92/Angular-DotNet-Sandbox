@@ -6,9 +6,13 @@ import { Injectable } from '@angular/core';
 export class TodoService {
   public title: string;
   public description: string;
-  public todoCollection: any[];
+  public id: number;
 
-  constructor() { }
+  constructor(title: string, desc: string, id: number) { 
+    this.title = title;
+    this.description = desc;
+    this.id = id;
+  }
 /*
 figure out how to spread the new objects into the collection array in service
 
@@ -22,5 +26,6 @@ figure out how to spread the new objects into the collection array in service
 interface ITodo {
     title: string;
     description: string;
+    id: number;
 }
 
